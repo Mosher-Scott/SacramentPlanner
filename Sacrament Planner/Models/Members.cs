@@ -20,5 +20,13 @@ namespace Sacrament_Planner.Models
 
         // Hold all the speaking assignments since a member could speak in more than 1 sacrament meeting
         public ICollection<Meetings> SpeakingAssignments { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return $"{FirstName} {LastName}";
+            }
+        }
     }
 }
