@@ -9,7 +9,7 @@ namespace Sacrament_Planner.Models
         public int ID { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{):yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime MeetingDate { get; set; }
 
         public string Presiding { get; set; }
@@ -29,6 +29,9 @@ namespace Sacrament_Planner.Models
 
         // Will need multiple people for prayers
         public List <Members> Prayers { get; set; }
+
+        
+
 
     }
 }

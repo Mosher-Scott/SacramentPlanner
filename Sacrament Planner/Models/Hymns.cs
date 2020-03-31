@@ -10,7 +10,9 @@ namespace Sacrament_Planner.Models
         public int ID { get; set; }
         public string HymnName { get; set; }
 
+        public int PageNumber { get; set; }
+
         // A hymn can be in multiple sacrament meetings
-        public ICollection<Meetings> Meeting { get; set; }
+        //public ICollection<Meetings> Meeting { get; set; }
     }
 }
