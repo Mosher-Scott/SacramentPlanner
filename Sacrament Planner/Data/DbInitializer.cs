@@ -19,9 +19,14 @@ namespace Sacrament_Planner.Data
             var members = new Members[]
             {
             new Members{FirstName="Joseph",LastName="Smith",Age=38,IsMale=true,Calling="Bishop"},
+            new Members{FirstName="Emma",LastName="Smith",Age=30,IsMale=false,Calling="RS President"},
+            new Members{FirstName="Sidney",LastName="Rigdon",Age=40,IsMale=true,Calling="1st Counselor"},
+            new Members{FirstName="Frederick",LastName="Williams",Age=37,IsMale=true,Calling="2nd Counselor"},
             new Members{FirstName="Jane",LastName="Manning",Age=94,IsMale=false,Calling="Primary Teacher"},
             new Members{FirstName="David",LastName="Archuleta",Age=29,IsMale=true,Calling="Sunday School Teacher"},
-            new Members{FirstName="Brandon",LastName="Flowers",Age=38,IsMale=true,Calling="Choir Director"}
+            new Members{FirstName="Brandon",LastName="Flowers",Age=38,IsMale=true,Calling="Choir Director"},
+            new Members{FirstName="Jack",LastName="Hill",Age=12,IsMale=true},
+            new Members{FirstName="Jill",LastName="Hill",Age=13,IsMale=false}
 
             };
             foreach (Members m in members)
@@ -46,8 +51,8 @@ namespace Sacrament_Planner.Data
 
             var meetings = new Meetings[]
             {
-            new Meetings{MeetingDate = DateTime.Parse("2020-09-01"), Presiding="Joseph Smith", Conducting="Joseph Smith",IntermediateSong=1}
-           
+            new Meetings{MeetingDate = DateTime.Parse("2020-09-01"), Presiding="Joseph Smith", Conducting="Joseph Smith",IntermediateSong=1, OpeningPrayer="Jack Hill", ClosingPrayer="Jane Manning", Speaker1="Jill Hill", Speaker2="Emma Smith", OpeningHymn="The Spirit of God", SacramentHymn="While of These Emblems We Partake", ClosingHymn="God Be with You Until We Meet Again"},
+            new Meetings{MeetingDate = DateTime.Parse("2020-09-01"), Presiding="Joseph Smith", Conducting="Sidney Rigdon",IntermediateSong=0, OpeningPrayer="David Archuleta", ClosingPrayer="Jack Hill", Speaker1="Joseph Smith", Speaker2="Emma Smith", OpeningHymn="Did You Think To Pray?", SacramentHymn="I Stand All Amazed", ClosingHymn="God Be with You Until We Meet Again"}
             };
             foreach (Meetings m in meetings)
             {
