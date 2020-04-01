@@ -28,8 +28,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Conducting" class="control-label"></label>
-                <input asp-for="Conducting" class="form-control" />
-                <span asp-validation-for="Conducting" class="text-danger"></span>
+                <select asp-for="Conducting" class="form-control" asp-items="ViewBag.BishopricNames">
+                    <option value="">-- Select Bishopric Member --</option>
+                </select>
+                <span asp-validation-for="Conducting" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="IntermediateSong" class="control-label"></label>
@@ -61,8 +63,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Speaker2" class="control-label"></label>
-                <input asp-for="Speaker2" class="form-control" />
-                <span asp-validation-for="Speaker2" class="text-danger"></span>
+                <select asp-for="Speaker2" class="form-control" asp-items="ViewBag.MemberNames">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker2" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Speaker2Topic" class="control-label"></label>
@@ -71,8 +75,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Speaker3" class="control-label"></label>
-                <input asp-for="Speaker3" class="form-control" />
-                <span asp-validation-for="Speaker3" class="text-danger"></span>
+                <select asp-for="Speaker3" class="form-control" asp-items="ViewBag.MemberNames">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker3" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Speaker3Topic" class="control-label"></label>
@@ -81,8 +87,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Speaker4" class="control-label"></label>
-                <input asp-for="Speaker4" class="form-control" />
-                <span asp-validation-for="Speaker4" class="text-danger"></span>
+                <select asp-for="Speaker4" class="form-control" asp-items="ViewBag.MemberNames">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker4" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Speaker4Topic" class="control-label"></label>
@@ -91,8 +99,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Speaker5" class="control-label"></label>
-                <input asp-for="Speaker5" class="form-control" />
-                <span asp-validation-for="Speaker5" class="text-danger"></span>
+                <select asp-for="Speaker5" class="form-control" asp-items="ViewBag.MemberNames">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker5" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Speaker5Topic" class="control-label"></label>
@@ -101,8 +111,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Speaker6" class="control-label"></label>
-                <input asp-for="Speaker6" class="form-control" />
-                <span asp-validation-for="Speaker6" class="text-danger"></span>
+                <select asp-for="Speaker6" class="form-control" asp-items="ViewBag.MemberNames">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker6" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Speaker6Topic" class="control-label"></label>
@@ -111,8 +123,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Speaker7" class="control-label"></label>
-                <input asp-for="Speaker7" class="form-control" />
-                <span asp-validation-for="Speaker7" class="text-danger"></span>
+                <select asp-for="Speaker7" class="form-control" asp-items="ViewBag.MemberNames">
+                    <option value="">-- Select Speaker --</option>
+                </select>
+                <span asp-validation-for="Speaker7" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Speaker7Topic" class="control-label"></label>
