@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Sacrament_Planner.Models.Meetings>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MeetingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presiding)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conducting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speaker1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speaker2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speaker3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speaker4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OpeningPrayer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClosingPrayer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presiding)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Conducting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speaker1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speaker2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speaker3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speaker4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpeningPrayer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClosingPrayer)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
