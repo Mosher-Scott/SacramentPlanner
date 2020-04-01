@@ -6,6 +6,7 @@ namespace Sacrament_Planner.Models
 {
     public class Meetings
     {
+        //TODO: Add Topics to specific speakers
         public int ID { get; set; }
 
         [DataType(DataType.Date)]
