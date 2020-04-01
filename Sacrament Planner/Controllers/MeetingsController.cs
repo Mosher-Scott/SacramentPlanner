@@ -54,6 +54,8 @@ namespace Sacrament_Planner.Controllers
         public IActionResult Create()
         {
             PopulateMembersDropDownList();
+            PopulateBishopricDropDownList();
+
             return View();
         }
 
@@ -69,6 +71,7 @@ namespace Sacrament_Planner.Controllers
                 return RedirectToAction(nameof(Index));
             }
             PopulateMembersDropDownList(meetings.ID);
+            PopulateBishopricDropDownList();
             return View(meetings);
         }
 
@@ -87,6 +90,7 @@ namespace Sacrament_Planner.Controllers
                 return NotFound();
             }
             PopulateMembersDropDownList(meetings.ID);
+            PopulateBishopricDropDownList();
             return View(meetings);
         }
 
@@ -104,6 +108,7 @@ namespace Sacrament_Planner.Controllers
 
             if (await TryUpdateModelAsync<Meetings>(meetingToUpdate,
                 "",
+                // TODO:  Need to add the rest of the properties here.  Only had 2 to make sure it works
                 c => c.Presiding, c=> c.SacramentHymn))
             {
                 try
@@ -120,15 +125,34 @@ namespace Sacrament_Planner.Controllers
                 return RedirectToAction(nameof(Index));
             }
             PopulateMembersDropDownList(meetingToUpdate.ID);
+            PopulateBishopricDropDownList(meetingToUpdate.ID);
             return View(meetingToUpdate);
         }
 
-        private void PopulateMembersDropDownList(object selectedMeeting= null)
+        /// <summary>
+        /// Queries the members table and returns members who have the calling "Bishop", 1st Counselor", or "2nd Counselor".
+        /// </summary>
+        /// <param name="selectedMeeting">Meeting ID to be edited.  Optional</param>
+        private void PopulateBishopricDropDownList(object selectedMeeting= null)
         {
             var MembersQuery = from d in _context.Members
                                    orderby d.LastName
-                                   select d;
-            ViewBag.DepartmentID = new SelectList(MembersQuery.AsNoTracking(), "Members", "Name", selectedMeeting);
+                                   where d.Calling.Contains("Bishop") || d.Calling.Contains("1st Counselor") || d.Calling.Contains("2nd Counselor")
+                               select d;
+            ViewBag.BishopricID = new SelectList(MembersQuery.AsNoTracking(), "ID", "FullName", selectedMeeting);
+        }
+
+        /// <summary>
+        /// Queries the members table and pulls all the members over 12 to be included in a dropdown
+        /// </summary>
+        /// <param name="selectedMeeting">Meeting ID to be edited.  Optional</param>
+        private void PopulateMembersDropDownList(object selectedMeeting = null)
+        {
+            var MembersQuery = from d in _context.Members
+                               orderby d.LastName
+                               where d.Age >= 12
+                               select d;
+            ViewBag.MembersID = new SelectList(MembersQuery.AsNoTracking(), "ID", "FullName", selectedMeeting);
         }
 
         #region Original Create/Edit Methods
