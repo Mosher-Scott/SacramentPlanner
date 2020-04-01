@@ -34,6 +34,7 @@ namespace Sacrament_Planner.Controllers
             }
 
             var meetings = await _context.Meetings
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (meetings == null)
             {
@@ -43,15 +44,20 @@ namespace Sacrament_Planner.Controllers
             return View(meetings);
         }
 
+        // GET: Meetings/Create ORIGINAL
+        //public IActionResult Create()
+        //{
+        //    return View();
+        //}
+
         // GET: Meetings/Create
         public IActionResult Create()
         {
+            PopulateMembersDropDownList();
             return View();
         }
 
         // POST: Meetings/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,MeetingDate,Presiding,Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker1Topic,Speaker2,Speaker2Topic,Speaker3,Speaker3Topic,Speaker4,Speaker4Topic,Speaker5,Speaker5Topic,Speaker6,Speaker6Topic,Speaker7,Speaker7Topic,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
@@ -62,10 +68,10 @@ namespace Sacrament_Planner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            PopulateMembersDropDownList(meetings.ID);
             return View(meetings);
         }
 
-        // GET: Meetings/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,48 +79,126 @@ namespace Sacrament_Planner.Controllers
                 return NotFound();
             }
 
-            var meetings = await _context.Meetings.FindAsync(id);
+            var meetings = await _context.Meetings
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (meetings == null)
             {
                 return NotFound();
             }
+            PopulateMembersDropDownList(meetings.ID);
             return View(meetings);
         }
 
-        // POST: Meetings/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,MeetingDate,Presiding,Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker1Topic,Speaker2,Speaker2Topic,Speaker3,Speaker3Topic,Speaker4,Speaker4Topic,Speaker5,Speaker5Topic,Speaker6,Speaker6Topic,Speaker7,Speaker7Topic,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
+        public async Task<IActionResult> EditPost(int? id)
         {
-            if (id != meetings.ID)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            var meetingToUpdate = await _context.Meetings
+                .FirstOrDefaultAsync(c => c.ID == id);
+
+            if (await TryUpdateModelAsync<Meetings>(meetingToUpdate,
+                "",
+                c => c.Presiding, c=> c.SacramentHymn))
             {
                 try
                 {
-                    _context.Update(meetings);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateException /* ex */)
                 {
-                    if (!MeetingsExists(meetings.ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    //Log the error (uncomment ex variable name and write a log.)
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                        "Try again, and if the problem persists, " +
+                        "see your system administrator.");
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(meetings);
+            PopulateMembersDropDownList(meetingToUpdate.ID);
+            return View(meetingToUpdate);
         }
+
+        private void PopulateMembersDropDownList(object selectedMeeting= null)
+        {
+            var MembersQuery = from d in _context.Members
+                                   orderby d.LastName
+                                   select d;
+            ViewBag.DepartmentID = new SelectList(MembersQuery.AsNoTracking(), "Members", "Name", selectedMeeting);
+        }
+
+        #region Original Create/Edit Methods
+        // POST: Meetings/Create ORIGINAL
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("ID,MeetingDate,Presiding,Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker1Topic,Speaker2,Speaker2Topic,Speaker3,Speaker3Topic,Speaker4,Speaker4Topic,Speaker5,Speaker5Topic,Speaker6,Speaker6Topic,Speaker7,Speaker7Topic,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(meetings);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(meetings);
+        //}
+
+        // GET: Meetings/Edit/5 ORIGINAL
+        //public async Task<IActionResult> Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var meetings = await _context.Meetings.FindAsync(id);
+        //    if (meetings == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(meetings);
+        //}
+
+        // POST: Meetings/Edit/5 ORIGINAL
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(int id, [Bind("ID,MeetingDate,Presiding,Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker1Topic,Speaker2,Speaker2Topic,Speaker3,Speaker3Topic,Speaker4,Speaker4Topic,Speaker5,Speaker5Topic,Speaker6,Speaker6Topic,Speaker7,Speaker7Topic,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
+        //{
+        //    if (id != meetings.ID)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            _context.Update(meetings);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!MeetingsExists(meetings.ID))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(meetings);
+        //}
+        #endregion
 
         // GET: Meetings/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -125,6 +209,7 @@ namespace Sacrament_Planner.Controllers
             }
 
             var meetings = await _context.Meetings
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (meetings == null)
             {
