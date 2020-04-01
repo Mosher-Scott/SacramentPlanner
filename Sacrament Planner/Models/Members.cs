@@ -19,7 +19,7 @@ namespace Sacrament_Planner.Models
         public string Calling { get; set; }
 
         // Hold all the speaking assignments since a member could speak in more than 1 sacrament meeting
-        public ICollection<Meetings> SpeakingAssignments { get; set; }
+        //public ICollection<Meetings> SpeakingAssignments { get; set; }
 
         public string FullName
         {
