@@ -5,6 +5,8 @@ namespace Sacrament_Planner.Data
 {
     public class MeetingContext : DbContext
     {
+        internal readonly object meetings;
+
         public MeetingContext(DbContextOptions<MeetingContext> options) : base(options)
         {
         }
