@@ -62,7 +62,7 @@ namespace Sacrament_Planner.Controllers
         // POST: Meetings/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,MeetingDate,Presiding,Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker1Topic,Speaker2,Speaker2Topic,Speaker3,Speaker3Topic,Speaker4,Speaker4Topic,Speaker5,Speaker5Topic,Speaker6,Speaker6Topic,Speaker7,Speaker7Topic,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
+        public async Task<IActionResult> Create([Bind("MeetingDate,Presiding,PresidingId, Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker1Topic,Speaker2,Speaker2Topic,Speaker3,Speaker3Topic,Speaker4,Speaker4Topic,Speaker5,Speaker5Topic,Speaker6,Speaker6Topic,Speaker7,Speaker7Topic,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
         {
             if (ModelState.IsValid)
             {
@@ -70,8 +70,7 @@ namespace Sacrament_Planner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            PopulateMembersDropDownList(meetings.ID);
-            PopulateBishopricDropDownList();
+
             return View(meetings);
         }
 
@@ -109,7 +108,11 @@ namespace Sacrament_Planner.Controllers
             if (await TryUpdateModelAsync<Meetings>(meetingToUpdate,
                 "",
                 // TODO:  Need to add the rest of the properties here.  Only had 2 to make sure it works
-                c => c.Presiding, c=> c.SacramentHymn))
+               c => c.MeetingDate, c => c.Presiding, c => c.Conducting, c => c.IntermediateSong, c => c.IntermediateMusicalNumber,
+               c => c.Speaker1, c => c.Speaker1Topic, c => c.Speaker2, c => c.Speaker2Topic, c => c.Speaker3, c => c.Speaker3Topic,
+               c => c.Speaker4, c => c.Speaker4Topic, c => c.Speaker5, c => c.Speaker5Topic, c => c.Speaker6, c => c.Speaker6Topic,
+               c => c.Speaker7, c => c.Speaker7Topic, c => c.OpeningHymn, c => c.SacramentHymn, c => c.ClosingHymn,
+               c => c.OpeningPrayer, c => c.ClosingPrayer))
             {
                 try
                 {
@@ -139,7 +142,13 @@ namespace Sacrament_Planner.Controllers
                                    orderby d.LastName
                                    where d.Calling.Contains("Bishop") || d.Calling.Contains("1st Counselor") || d.Calling.Contains("2nd Counselor")
                                select d;
+            // For the dropdown in quotes I've added where they show up in HTML, "Value", "Displayed Option".
+            // On the Meetings/Create page, change the Viewbag property and see the difference
+            // Use this if you want to save the names as a string
             ViewBag.BishopricID = new SelectList(MembersQuery.AsNoTracking(), "ID", "FullName", selectedMeeting);
+
+            // Use this if you want to save the IDs as an int
+            ViewBag.BishopricNames = new SelectList(MembersQuery.AsNoTracking(), "FullName", "FullName", selectedMeeting);
         }
 
         /// <summary>
@@ -152,6 +161,11 @@ namespace Sacrament_Planner.Controllers
                                orderby d.LastName
                                where d.Age >= 12
                                select d;
+
+            // Use this if you want to save the names as a string
+            ViewBag.MemberNames = new SelectList(MembersQuery.AsNoTracking(), "FullName", "FullName", selectedMeeting);
+
+            // Use this if you want to save the IDs as an int
             ViewBag.MembersID = new SelectList(MembersQuery.AsNoTracking(), "ID", "FullName", selectedMeeting);
         }
 

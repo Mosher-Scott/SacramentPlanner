@@ -15,6 +15,10 @@ namespace Sacrament_Planner.Models
         public DateTime MeetingDate { get; set; }
 
         public string Presiding { get; set; }
+
+        // In the future, if we want to save the IDs and use multiple tables
+        //public int PresidingId { get; set; }
+
         public string Conducting { get; set; }
 
         // In our logic, if IntermediateSong == 0, then there is none
