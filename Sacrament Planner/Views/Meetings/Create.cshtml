@@ -17,19 +17,14 @@
                 <input asp-for="MeetingDate" class="form-control" />
                 <span asp-validation-for="MeetingDate" class="text-danger"></span>
             </div>
+            
+            <!-- Saves the name to the "Presiding" option -->
             <div class="form-group">
                 <label asp-for="Presiding" class="control-label"></label>
-                <input asp-for="Presiding" class="form-control" />
-                <span asp-validation-for="Presiding" class="text-danger"></span>
-            </div>
-
-            <!-- TODO: Test this before doing the rest -->
-            <div class="form-group">
-                <label asp-for="Presiding" class="control-label"></label>
-                <select asp-for="ID" class="form-control" asp-items="ViewBag.BishopricID">
+                <select asp-for="Presiding" class="form-control" asp-items="ViewBag.BishopricNames">
                     <option value="">-- Select Bishopric Member --</option>
                 </select>
-                <span asp-validation-for="ID" class="text-danger" />
+                <span asp-validation-for="Presiding" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Conducting" class="control-label"></label>
@@ -46,18 +41,18 @@
                 <input asp-for="IntermediateMusicalNumber" class="form-control" />
                 <span asp-validation-for="IntermediateMusicalNumber" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Speaker1" class="control-label"></label>
                 <input asp-for="Speaker1" class="form-control" />
                 <span asp-validation-for="Speaker1" class="text-danger"></span>
-            </div>
+            </div>*@
             <!-- TODO: Test this before doing the rest -->
             <div class="form-group">
                 <label asp-for="Speaker1" class="control-label"></label>
-                <select asp-for="ID" class="form-control" asp-items="ViewBag.MembersID">
+                <select asp-for="Speaker1" class="form-control" asp-items="ViewBag.MemberNames">
                     <option value="">-- Select Speaker --</option>
                 </select>
-                <span asp-validation-for="ID" class="text-danger" />
+                <span asp-validation-for="Speaker1" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Speaker1Topic" class="control-label"></label>
@@ -153,13 +148,13 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
