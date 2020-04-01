@@ -10,11 +10,11 @@ using Sacrament_Planner.Models;
 
 namespace Sacrament_Planner.Controllers
 {
-    public class MeetingsController : Controller
+    public class MeetingsControllerOLD : Controller
     {
         private readonly MeetingContext _context;
 
-        public MeetingsController(MeetingContext context)
+        public MeetingsControllerOLD(MeetingContext context)
         {
             _context = context;
         }
@@ -54,7 +54,7 @@ namespace Sacrament_Planner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,MeetingDate,Presiding,Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker1Topic,Speaker2,Speaker2Topic,Speaker3,Speaker3Topic,Speaker4,Speaker4Topic,Speaker5,Speaker5Topic,Speaker6,Speaker6Topic,Speaker7,Speaker7Topic,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
+        public async Task<IActionResult> Create([Bind("ID,MeetingDate,Presiding,Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker2,Speaker3,Speaker4,Speaker5,Speaker6,Speaker7,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Sacrament_Planner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,MeetingDate,Presiding,Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker1Topic,Speaker2,Speaker2Topic,Speaker3,Speaker3Topic,Speaker4,Speaker4Topic,Speaker5,Speaker5Topic,Speaker6,Speaker6Topic,Speaker7,Speaker7Topic,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,MeetingDate,Presiding,Conducting,IntermediateSong,IntermediateMusicalNumber,Speaker1,Speaker2,Speaker3,Speaker4,Speaker5,Speaker6,Speaker7,OpeningHymn,SacramentHymn,ClosingHymn,OpeningPrayer,ClosingPrayer")] Meetings meetings)
         {
             if (id != meetings.ID)
             {
