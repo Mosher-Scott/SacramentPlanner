@@ -23,7 +23,7 @@ namespace Sacrament_Planner.Models
 
         // In our logic, if IntermediateSong == 0, then there is none
         [Display(Name = "Intermediate Song")]
-        public int IntermediateSong { get; set; }
+        public string IntermediateSong { get; set; }
 
         // If this is null, then there is no intermediate musical number
         [Display(Name = "Intermediate Musical Number")]
