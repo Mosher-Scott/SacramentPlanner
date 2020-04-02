@@ -35,8 +35,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="IntermediateSong" class="control-label"></label>
-                <input asp-for="IntermediateSong" class="form-control" />
-                <span asp-validation-for="IntermediateSong" class="text-danger"></span>
+                <select asp-for="IntermediateSong" class="form-control" asp-items="ViewBag.HymnNames">
+                    <option value="">-- Select Hymn --</option>
+                </select>
+                <span asp-validation-for="IntermediateSong" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="IntermediateMusicalNumber" class="control-label"></label>
