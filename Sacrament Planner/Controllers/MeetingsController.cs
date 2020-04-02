@@ -56,6 +56,7 @@ namespace Sacrament_Planner.Controllers
         {
             PopulateMembersDropDownList();
             PopulateBishopricDropDownList();
+            PopulateHymnDropDownList();
 
             return View();
         }
@@ -91,6 +92,7 @@ namespace Sacrament_Planner.Controllers
             }
             PopulateMembersDropDownList(meetings.ID);
             PopulateBishopricDropDownList();
+            PopulateHymnDropDownList();
             return View(meetings);
         }
 
@@ -130,6 +132,7 @@ namespace Sacrament_Planner.Controllers
             }
             PopulateMembersDropDownList(meetingToUpdate.ID);
             PopulateBishopricDropDownList(meetingToUpdate.ID);
+            PopulateHymnDropDownList(meetingToUpdate.ID);
             return View(meetingToUpdate);
         }
 
@@ -168,6 +171,24 @@ namespace Sacrament_Planner.Controllers
 
             // Use this if you want to save the IDs as an int
             ViewBag.MembersID = new SelectList(MembersQuery.AsNoTracking(), "ID", "FullName", selectedMeeting);
+        }
+
+        /// <summary>
+        /// Queries the hymns table and returns all hymns 
+        /// </summary>
+        /// <param name="selectedMeeting">Meeting ID to be edited.  Optional</param>
+        private void PopulateHymnDropDownList(object selectedMeeting = null)
+        {
+            var HymnsQuery = from d in _context.Hymns
+                               orderby d.HymnName
+                               select d;
+            // For the dropdown in quotes I've added where they show up in HTML, "Value", "Displayed Option".
+            // On the Meetings/Create page, change the Viewbag property and see the difference
+            // Use this if you want to save the names as a int
+            ViewBag.HymnID = new SelectList(HymnsQuery.AsNoTracking(), "ID", "HymnName", selectedMeeting);
+
+            // Use this if you want to save the IDs as an string
+            ViewBag.HymnNames = new SelectList(HymnsQuery.AsNoTracking(), "HymnName", "HymnName", selectedMeeting);
         }
 
         #region Original Create/Edit Methods

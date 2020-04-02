@@ -17,7 +17,7 @@
                 <input asp-for="MeetingDate" class="form-control" />
                 <span asp-validation-for="MeetingDate" class="text-danger"></span>
             </div>
-            
+
             <!-- Saves the name to the "Presiding" option -->
             <div class="form-group">
                 <label asp-for="Presiding" class="control-label"></label>
@@ -44,10 +44,10 @@
                 <span asp-validation-for="IntermediateMusicalNumber" class="text-danger"></span>
             </div>
             @*<div class="form-group">
-                <label asp-for="Speaker1" class="control-label"></label>
-                <input asp-for="Speaker1" class="form-control" />
-                <span asp-validation-for="Speaker1" class="text-danger"></span>
-            </div>*@
+            <label asp-for="Speaker1" class="control-label"></label>
+            <input asp-for="Speaker1" class="form-control" />
+            <span asp-validation-for="Speaker1" class="text-danger"></span>
+        </div>*@
             <!-- TODO: Test this before doing the rest -->
             <div class="form-group">
                 <label asp-for="Speaker1" class="control-label"></label>
@@ -133,30 +133,42 @@
                 <input asp-for="Speaker7Topic" class="form-control" />
                 <span asp-validation-for="Speaker7Topic" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="OpeningHymn" class="control-label"></label>
-                <input asp-for="OpeningHymn" class="form-control" />
-                <span asp-validation-for="OpeningHymn" class="text-danger"></span>
+                <select asp-for="OpeningHymn" class="form-control" asp-items="ViewBag.HymnNames">
+                    <option value="">-- Select Hymn --</option>
+                </select>
+                <span asp-validation-for="OpeningHymn" class="text-danger" />
             </div>
+
             <div class="form-group">
                 <label asp-for="SacramentHymn" class="control-label"></label>
-                <input asp-for="SacramentHymn" class="form-control" />
-                <span asp-validation-for="SacramentHymn" class="text-danger"></span>
+                <select asp-for="SacramentHymn" class="form-control" asp-items="ViewBag.HymnNames">
+                    <option value="">-- Select Hymn --</option>
+                </select>
+                <span asp-validation-for="SacramentHymn" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="ClosingHymn" class="control-label"></label>
-                <input asp-for="ClosingHymn" class="form-control" />
-                <span asp-validation-for="ClosingHymn" class="text-danger"></span>
+                <select asp-for="ClosingHymn" class="form-control" asp-items="ViewBag.HymnNames">
+                    <option value="">-- Select Hymn --</option>
+                </select>
+                <span asp-validation-for="ClosingHymn" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="OpeningPrayer" class="control-label"></label>
-                <input asp-for="OpeningPrayer" class="form-control" />
-                <span asp-validation-for="OpeningPrayer" class="text-danger"></span>
+                <select asp-for="OpeningPrayer" class="form-control" asp-items="ViewBag.MemberNames">
+                    <option value="">-- Select Member --</option>
+                </select>
+                <span asp-validation-for="OpeningPrayer" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="ClosingPrayer" class="control-label"></label>
-                <input asp-for="ClosingPrayer" class="form-control" />
-                <span asp-validation-for="ClosingPrayer" class="text-danger"></span>
+                <select asp-for="ClosingPrayer" class="form-control" asp-items="ViewBag.MemberNames">
+                    <option value="">-- Select Member --</option>
+                </select>
+                <span asp-validation-for="ClosingPrayer" class="text-danger" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
