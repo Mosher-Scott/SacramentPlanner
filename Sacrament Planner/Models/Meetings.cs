@@ -10,7 +10,8 @@ namespace Sacrament_Planner.Models
         public int ID { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+       // [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MMMM dd, yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Meeting Date")]
         public DateTime MeetingDate { get; set; }
 
@@ -26,11 +27,8 @@ namespace Sacrament_Planner.Models
         public string IntermediateSong { get; set; }
 
         // If this is null, then there is no intermediate musical number
-        [Display(Name = "Intermediate Musical Number")]
+        [Display(Name = "Intermediate Musical Number Group")]
         public string IntermediateMusicalNumber { get; set; }
-
-        // Going to have multiple speakers, so we'll need to add them to a list
-        //public List <Members> Speakers { get; set; }
 
         [Display(Name = "Speaker 1")]
         public string Speaker1 { get; set; }
