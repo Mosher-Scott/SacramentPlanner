@@ -136,6 +136,25 @@ namespace Sacrament_Planner.Controllers
             return View(meetingToUpdate);
         }
 
+        // GET: Meetings/Print/5
+        public async Task<IActionResult> Print(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var meetings = await _context.Meetings
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (meetings == null)
+            {
+                return NotFound();
+            }
+
+            return View(meetings);
+        }
+
         /// <summary>
         /// Queries the members table and returns members who have the calling "Bishop", 1st Counselor", or "2nd Counselor".
         /// </summary>

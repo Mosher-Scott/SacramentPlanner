@@ -1,0 +1,145 @@
+﻿@model Sacrament_Planner.Models.Meetings
+
+@{
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+    ViewData["Title"] = "Details";
+
+}
+
+<!-- CSS styles for this page is specified in _LayOutEmpty.cshmtl.
+    TODO: Move it to the css file when merged -->
+<div class="program-width">
+    <div class="text-center">
+        <h4>Lake Fork Ward</h4>
+        <h4>@Html.DisplayFor(model => model.MeetingDate)</h4>
+    </div>
+    <br />
+    <div id="programBody">
+        <table>
+            <tr>
+                <td class="leftText"><span>Presiding</span></td>
+                <td class="rightText"><span>Bishop <!-- TODO: Replace this with the actual calling --> @Html.DisplayFor(model => model.Presiding)</span>
+            </tr>
+            <tr>
+                <td class="leftText"><span>Conducting</span></td>
+                <td class="rightText"><span> Brother @Html.DisplayFor(model => model.Conducting)</span>
+            </tr>
+            <tr>
+                <td class="leftText"><span>Opening Hymn</span></td>
+                <td class="rightText"><span> Page 100 <!-- TODO: Pull page number --></span>
+            </tr>
+
+        </table>
+        <p class="hymnName">"@Html.DisplayFor(model => model.OpeningHymn)"</p>
+        <table>
+            <tr>
+                <td class="leftText"><span>Invocation</span></td>
+                <td class="rightText"><span> Sister <!-- TODO: Get whether they are M or F -->@Html.DisplayFor(model => model.OpeningPrayer) </span>
+            </tr>
+        </table>
+        <p class="text-center">Ward Business</p>
+        <table>
+            <tr>
+                <td class="leftText"><span>Sacrament Hymn</span></td>
+                <td class="rightText"><span> Page 100 <!-- TODO: Pull page number --></span>
+            </tr>
+        </table>
+        <p class="hymnName">"@Html.DisplayFor(model => model.SacramentHymn)"</p>
+        <p class="text-center">Passing of the Sacrament by the Aaronic Priesthood</p>
+        <table>
+            <!--TODO: FOR EACH Check whether they are under 18 for each speaker..  If so, change "Speaker" to "Youth Speaker". -->
+            <!-- TODO: FOR EACH Get whether they are M or F, and change "Sister" to "Brother" if needed -->
+            @if (Model.Speaker1 != null)
+            {
+                <tr>
+                    <td class="leftText"><span>Speaker </span></td>
+                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker1) </span>
+                </tr>
+            }
+
+            @if (Model.Speaker2 != null)
+            {
+                <tr>
+                    <td class="leftText"><span>Speaker </span></td>
+                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker2) </span>
+                </tr>
+            }
+
+
+            @if (Model.Speaker3 != null)
+            {
+                <tr>
+                    <td class="leftText"><span>Speaker </span></td>
+                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker3) </span>
+                </tr>
+            }
+        </table>
+
+        <!-- Putting Intermediate Hymn here, since usually you'll have 5 speakers.  2 youth, 3 adult -->
+        @if (Model.IntermediateSong != null)
+        {
+            <table>
+                <tr>
+                    <td class="leftText"><span>Intermediate Hymn</span></td>
+                    <td class="rightText"><span> Page 100 <!-- TODO: Pull page number --></span>
+                </tr>
+            </table>
+            <p class="text-center">Special Musical Number</p>
+            <p class="hymnName">@Html.DisplayNameFor(model => model.IntermediateSong)</p>
+        }
+
+        @if (Model.IntermediateMusicalNumber != null)
+        {
+
+            <p class="text-center">Special Musical Number</p>
+            <p class="hymnName">@Html.DisplayFor(model => model.IntermediateMusicalNumber)</p>
+        }
+
+        <table>
+            @if (Model.Speaker4 != null)
+            {
+                <tr>
+                    <td class="leftText"><span>Speaker </span></td>
+                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker4) </span>
+                </tr>
+            }
+            @if (Model.Speaker5 != null)
+            {
+                <tr>
+                    <td class="leftText"><span>Speaker </span></td>
+                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker5) </span>
+                </tr>
+            }
+            @if (Model.Speaker6 != null)
+            {
+                <tr>
+                    <td class="leftText"><span>Speaker </span></td>
+                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker6) </span>
+                </tr>
+            }
+            @if (Model.Speaker7 != null)
+            {
+                <tr>
+                    <td class="leftText"><span>Speaker </span></td>
+                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker7) </span>
+                </tr>
+            }
+        </table>
+
+        <!-- Now for closing stuff -->
+        <table>
+            <tr>
+                <td class="leftText"><span>Closing Hymn</span></td>
+                <td class="rightText"><span> Page 100 <!-- TODO: Pull page number --></span>
+            </tr>
+        </table>
+        <p class="hymnName">"@Html.DisplayFor(model => model.ClosingHymn)"</p>
+        
+        <table>
+            <tr>
+                <td class="leftText"><span>Invocation</span></td>
+                <td class="rightText"><span> Sister <!-- TODO: Get whether they are M or F -->@Html.DisplayFor(model => model.ClosingPrayer) </span>
+            </tr>
+        </table>
+    </div>
+</div>
