@@ -9,6 +9,8 @@ namespace Sacrament_Planner.Models
         //TODO: Add Topics to specific speakers
         public int ID { get; set; }
 
+        public string WardTitle = "Lake View Ward";
+
         [DataType(DataType.Date)]
        // [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DisplayFormat(DataFormatString = "{0:MMMM dd, yyyy}", ApplyFormatInEditMode = true)]
