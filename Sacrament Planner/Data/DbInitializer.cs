@@ -51,8 +51,8 @@ namespace Sacrament_Planner.Data
 
             var meetings = new Meetings[]
             {
-            new Meetings{MeetingDate = DateTime.Parse("2020-09-01"), Presiding="Joseph Smith", Conducting="Joseph Smith",IntermediateSong="Did You Think To Pray?", OpeningPrayer="Jack Hill", ClosingPrayer="Jane Manning", Speaker1="Jill Hill", Speaker2="Emma Smith", OpeningHymn="The Spirit of God", SacramentHymn="While of These Emblems We Partake", ClosingHymn="God Be with You Until We Meet Again"},
-            new Meetings{MeetingDate = DateTime.Parse("2020-09-01"), Presiding="Joseph Smith", Conducting="Sidney Rigdon",IntermediateSong="Did You Think To Pray?", OpeningPrayer="David Archuleta", ClosingPrayer="Jack Hill", Speaker1="Joseph Smith", Speaker2="Emma Smith", OpeningHymn="Did You Think To Pray?", SacramentHymn="I Stand All Amazed", ClosingHymn="God Be with You Until We Meet Again"}
+            new Meetings{MeetingDate = DateTime.Parse("2020-09-01"), Presiding="Joseph Smith", Conducting="Joseph Smith",IntermediateSong="Did You Think To Pray?",IntermediateSongNumber=5, OpeningPrayer="Jack Hill", ClosingPrayer="Jane Manning", Speaker1="Jill Hill", Speaker2="Emma Smith", OpeningHymn="The Spirit of God",OpeningHymnNumber=5, SacramentHymn="While of These Emblems We Partake",SacramentHymnNumber=99, ClosingHymn="God Be with You Until We Meet Again", ClosingHymnNumber=30},
+            new Meetings{MeetingDate = DateTime.Parse("2020-09-01"), Presiding="Joseph Smith", Conducting="Sidney Rigdon",IntermediateSong="Did You Think To Pray?",IntermediateSongNumber=2, OpeningPrayer="David Archuleta", ClosingPrayer="Jack Hill", Speaker1="Joseph Smith", Speaker2="Emma Smith", OpeningHymn="Did You Think To Pray?",OpeningHymnNumber=5, SacramentHymn="I Stand All Amazed", SacramentHymnNumber=50, ClosingHymn="God Be with You Until We Meet Again", ClosingHymnNumber=20}
             };
             foreach (Meetings m in meetings)
             {

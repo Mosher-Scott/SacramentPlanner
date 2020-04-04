@@ -28,6 +28,8 @@ namespace Sacrament_Planner.Models
         [Display(Name = "Intermediate Song")]
         public string IntermediateSong { get; set; }
 
+        public int IntermediateSongNumber { get; set; }
+
         // If this is null, then there is no intermediate musical number
         [Display(Name = "Intermediate Musical Number Group")]
         public string IntermediateMusicalNumber { get; set; }
@@ -77,11 +79,17 @@ namespace Sacrament_Planner.Models
         [Display(Name = "Opening Hymn")]
         public string OpeningHymn { get; set; }
 
+        public int OpeningHymnNumber { get; set; }
+
         [Display(Name = "Sacrament Hymn")]
         public string SacramentHymn { get; set; }
 
+        public int SacramentHymnNumber { get; set; }
+
         [Display(Name = "Closing Hymn")]
         public string ClosingHymn { get; set; }
+
+        public int ClosingHymnNumber { get; set; }
 
         [Display(Name = "Opening Prayer")]
         public string OpeningPrayer { get; set; }

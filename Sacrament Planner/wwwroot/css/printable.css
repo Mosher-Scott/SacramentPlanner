@@ -1,0 +1,42 @@
+﻿
+/* Scotts CSS */
+.program-width {
+    max-width: 500px;
+}
+
+.printText {
+    margin-bottom: .6rem;
+}
+
+.hymnPrintText {
+    margin: 0px;
+}
+
+.text-center {
+    margin-bottom: 0px;
+}
+
+.hymnName {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .5rem;
+}
+
+table {
+    width: 500px;
+}
+
+td span {
+    background-color: #FFF;
+}
+
+td.leftText:before {
+    clip: rect(0px, 500px, 20px, 0px);
+    content: " ............................................................................................................................................  ";
+    position: absolute;
+    z-index: -1;
+}
+
+td.rightText {
+    text-align: right;
+}

@@ -28,5 +28,27 @@ namespace Sacrament_Planner.Models
                 return $"{FirstName} {LastName}";
             }
         }
+
+        public string FullNameWithTitle
+        {
+            get
+            {
+                if(IsMale)
+                {
+                    return $"Brother {FirstName} {LastName}";
+                } else
+                {
+                    return $"Sister {FirstName} {LastName}";
+                }
+            }
+        }
+
+        public string FullNameWithCalling
+        {
+            get
+            {
+               return $"{Calling} {FirstName} {LastName}";
+            }
+        }
     }
 }
