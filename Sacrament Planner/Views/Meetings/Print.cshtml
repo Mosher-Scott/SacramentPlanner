@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <td class="leftText"><span>Opening Hymn</span></td>
-                <td class="rightText"><span> Page 100 <!-- TODO: Pull page number --></span>
+                <td class="rightText"><span> Page @Html.DisplayFor(model => model.OpeningHymnNumber)</span>
             </tr>
 
         </table>
@@ -34,14 +34,14 @@
         <table>
             <tr>
                 <td class="leftText"><span>Invocation</span></td>
-                <td class="rightText"><span> Sister <!-- TODO: Get whether they are M or F -->@Html.DisplayFor(model => model.OpeningPrayer) </span>
+                <td class="rightText"><span> @Html.DisplayFor(model => model.OpeningPrayer) </span>
             </tr>
         </table>
         <p class="text-center">Ward Business</p>
         <table>
             <tr>
                 <td class="leftText"><span>Sacrament Hymn</span></td>
-                <td class="rightText"><span> Page 100 <!-- TODO: Pull page number --></span>
+                <td class="rightText"><span> Page @Html.DisplayFor(model => model.SacramentHymnNumber)</span>
             </tr>
         </table>
         <p class="hymnName">"@Html.DisplayFor(model => model.SacramentHymn)"</p>
@@ -53,7 +53,7 @@
             {
                 <tr>
                     <td class="leftText"><span>Speaker </span></td>
-                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker1) </span>
+                    <td class="rightText"><span> @Html.DisplayFor(model => model.Speaker1) </span>
                 </tr>
             }
 
@@ -61,7 +61,7 @@
             {
                 <tr>
                     <td class="leftText"><span>Speaker </span></td>
-                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker2) </span>
+                    <td class="rightText"><span>@Html.DisplayFor(model => model.Speaker2) </span>
                 </tr>
             }
 
@@ -70,7 +70,7 @@
             {
                 <tr>
                     <td class="leftText"><span>Speaker </span></td>
-                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker3) </span>
+                    <td class="rightText"><span>@Html.DisplayFor(model => model.Speaker3) </span>
                 </tr>
             }
         </table>
@@ -81,7 +81,7 @@
             <table>
                 <tr>
                     <td class="leftText"><span>Intermediate Hymn</span></td>
-                    <td class="rightText"><span> Page 100 <!-- TODO: Pull page number --></span>
+                    <td class="rightText"><span> Page @Html.DisplayFor(model => model.IntermediateSongNumber)</span>
                 </tr>
             </table>
             <p class="text-center">Special Musical Number</p>
@@ -100,28 +100,28 @@
             {
                 <tr>
                     <td class="leftText"><span>Speaker </span></td>
-                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker4) </span>
+                    <td class="rightText"><span>@Html.DisplayFor(model => model.Speaker4) </span>
                 </tr>
             }
             @if (Model.Speaker5 != null)
             {
                 <tr>
                     <td class="leftText"><span>Speaker </span></td>
-                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker5) </span>
+                    <td class="rightText"><span>@Html.DisplayFor(model => model.Speaker5) </span>
                 </tr>
             }
             @if (Model.Speaker6 != null)
             {
                 <tr>
                     <td class="leftText"><span>Speaker </span></td>
-                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker6) </span>
+                    <td class="rightText"><span>@Html.DisplayFor(model => model.Speaker6) </span>
                 </tr>
             }
             @if (Model.Speaker7 != null)
             {
                 <tr>
                     <td class="leftText"><span>Speaker </span></td>
-                    <td class="rightText"><span> Sister @Html.DisplayFor(model => model.Speaker7) </span>
+                    <td class="rightText"><span>@Html.DisplayFor(model => model.Speaker7) </span>
                 </tr>
             }
         </table>
@@ -130,7 +130,7 @@
         <table>
             <tr>
                 <td class="leftText"><span>Closing Hymn</span></td>
-                <td class="rightText"><span> Page 100 <!-- TODO: Pull page number --></span>
+                <td class="rightText"><span> Page @Html.DisplayFor(model => model.ClosingHymnNumber)</span>
             </tr>
         </table>
         <p class="hymnName">"@Html.DisplayFor(model => model.ClosingHymn)"</p>
@@ -138,7 +138,7 @@
         <table>
             <tr>
                 <td class="leftText"><span>Invocation</span></td>
-                <td class="rightText"><span> Sister <!-- TODO: Get whether they are M or F -->@Html.DisplayFor(model => model.ClosingPrayer) </span>
+                <td class="rightText"><span><!-- TODO: Get whether they are M or F -->@Html.DisplayFor(model => model.ClosingPrayer) </span>
             </tr>
         </table>
     </div>

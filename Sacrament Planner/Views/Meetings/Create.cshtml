@@ -37,23 +37,23 @@
                 <span asp-validation-for="Conducting" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="IntermediateSong" class="control-label"></label>
-                <select asp-for="IntermediateSong" class="form-control" asp-items="ViewBag.HymnNames">
+                <label asp-for="IntermediateSongNumber" class="control-label"></label>
+                <select asp-for="IntermediateSongNumber" class="form-control" asp-items="ViewBag.HymnNames">
                     <option value="">-- Select Hymn --</option>
                 </select>
-                <span asp-validation-for="IntermediateSong" class="text-danger" />
+                <span asp-validation-for="IntermediateSongNumber" class="text-danger" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OpeningHymnNumber" class="control-label"></label>
+                <input asp-for="OpeningHymnNumber" class="form-control" />
+                <span asp-validation-for="OpeningHymnNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IntermediateMusicalNumber" class="control-label"></label>
                 <input asp-for="IntermediateMusicalNumber" class="form-control" />
                 <span asp-validation-for="IntermediateMusicalNumber" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
-            <label asp-for="Speaker1" class="control-label"></label>
-            <input asp-for="Speaker1" class="form-control" />
-            <span asp-validation-for="Speaker1" class="text-danger"></span>
-        </div>*@
-            <!-- TODO: Test this before doing the rest -->
+
             <div class="form-group">
                 <label asp-for="Speaker1" class="control-label"></label>
                 <select asp-for="Speaker1" class="form-control" asp-items="ViewBag.MemberNames">
@@ -146,6 +146,11 @@
                 </select>
                 <span asp-validation-for="OpeningHymn" class="text-danger" />
             </div>
+            <div class="form-group">
+                <label asp-for="OpeningHymnNumber" class="control-label"></label>
+                <input asp-for="OpeningHymnNumber" class="form-control" />
+                <span asp-validation-for="OpeningHymnNumber" class="text-danger"></span>
+            </div>
 
             <div class="form-group">
                 <label asp-for="SacramentHymn" class="control-label"></label>
@@ -155,11 +160,25 @@
                 <span asp-validation-for="SacramentHymn" class="text-danger" />
             </div>
             <div class="form-group">
+                <label asp-for="SacramentHymnNumber" class="control-label"></label>
+                <select asp-for="SacramentHymnNumber" class="form-control" asp-items="ViewBag.HymnNames">
+                    <option value="">-- Select Hymn --</option>
+                </select>
+                <span asp-validation-for="SacramentHymnNumber" class="text-danger" />
+            </div>
+            <div class="form-group">
                 <label asp-for="ClosingHymn" class="control-label"></label>
                 <select asp-for="ClosingHymn" class="form-control" asp-items="ViewBag.HymnNames">
                     <option value="">-- Select Hymn --</option>
                 </select>
                 <span asp-validation-for="ClosingHymn" class="text-danger" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ClosingHymnNumber" class="control-label"></label>
+                <select asp-for="ClosingHymnNumber" class="form-control" asp-items="ViewBag.HymnNames">
+                    <option value="">-- Select Hymn --</option>
+                </select>
+                <span asp-validation-for="ClosingHymnNumber" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="OpeningPrayer" class="control-label"></label>
