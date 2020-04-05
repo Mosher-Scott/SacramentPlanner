@@ -9,7 +9,7 @@ namespace Sacrament_Planner.Models
         //TODO: Add Topics to specific speakers
         public int ID { get; set; }
 
-        public string WardTitle = "Lake View Ward";
+        public static string WardTitle = "Lake View Ward";
 
         [DataType(DataType.Date)]
        // [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -17,6 +17,7 @@ namespace Sacrament_Planner.Models
         [Display(Name = "Meeting Date")]
         public DateTime MeetingDate { get; set; }
 
+        [Required]
         public string Presiding { get; set; }
 
         // In the future, if we want to save the IDs and use multiple tables
@@ -28,10 +29,11 @@ namespace Sacrament_Planner.Models
         [Display(Name = "Intermediate Song")]
         public string IntermediateSong { get; set; }
 
+        [Display(Name = "Intermediate Song Number")]
         public int IntermediateSongNumber { get; set; }
 
         // If this is null, then there is no intermediate musical number
-        [Display(Name = "Intermediate Musical Number Group")]
+        [Display(Name = "Intermediate Musical Group")]
         public string IntermediateMusicalNumber { get; set; }
 
         [Display(Name = "Speaker 1")]
@@ -79,16 +81,19 @@ namespace Sacrament_Planner.Models
         [Display(Name = "Opening Hymn")]
         public string OpeningHymn { get; set; }
 
+        [Display(Name = "Opening Hymn Number")]
         public int OpeningHymnNumber { get; set; }
 
         [Display(Name = "Sacrament Hymn")]
         public string SacramentHymn { get; set; }
 
+        [Display(Name = "Sacrament Hymn Number")]
         public int SacramentHymnNumber { get; set; }
 
         [Display(Name = "Closing Hymn")]
         public string ClosingHymn { get; set; }
 
+        [Display(Name = "Closing Hymn Number")]
         public int ClosingHymnNumber { get; set; }
 
         [Display(Name = "Opening Prayer")]
