@@ -1,27 +1,40 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
 
+a {
+    color: #008080 !important;
+}
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
-/* Sticky footer styles
+
+/* mobile (main)
 -------------------------------------------------- */
 html {
     font-size: 14px;
     background-color: #e8e4ca;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    
 }
 
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
 
-.jumbotron {
-    background-image: url()
+.border-bottom {
+    border-bottom: 5px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 .bg-white {
@@ -41,65 +54,143 @@ html {
 }
 
     .main-header img {
-        height: 150px;
+        max-height: 100px;
     }
 
     .main-header h1 {
-        font-size: 4em !important;
+        font-size: 2em !important;
         background-color: #b58978;
         padding-top: 30px;
         width: 100%;
         margin-bottom: 0px;
     }
-.border-top {
-    border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-    border-bottom: 5px solid #e5e5e5;
-}
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    div.item.home-pic {
+        width: 80%;
+        padding-bottom: 15px;
+    }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
+        div.item img {
+            width: 100%;
+            flex: 2;
+        }
 
-/* Sticky footer styles
--------------------------------------------------- */
+        .item {
+            flex: 1;
+        }
+/* Sticky footer styles------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'Nunito', sans-serif;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    text-align: center;
+    
 }
 
-a.nav-link.text-dark {
-    color: #fff !important;
-}
+    
 
-    a.nav-link.text-dark:hover {
-        color: lightgoldenrodyellow !important;
+    a.nav-link.text-dark {
+        color: #fff !important;
     }
 
-a.navbar-brand {
-    color: #fff !important;
+        a.nav-link.text-dark:hover {
+            color: #F0FFFF !important;
+        }
+
+    a.navbar-brand {
+        color: #fff !important;
+    }
+
+        a.navbar-brand:hover {
+            color: #F0FFFF !important;
+        }
+
+        .logo {
+            width: 50px;
+        }
+
+        .move-left {
+            padding-right: 65px;
+        }
+
+/* Tablet (medium)
+-------------------------------------------------- */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    .main-header h1 {
+        font-size: 3em !important;
+        padding-top: 20px;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    div.item.home-pic {
+        max-width: 430px;
+        padding-bottom: 0px;
+    }
+
+    div.item img {
+        width: 100%;
+        flex: 2;
+    }
+
+    .item {
+        padding: 10px;
+        flex: 1;
+    }
 }
 
-    a.navbar-brand:hover {
-        color: lightgoldenrodyellow !important;
+/* Laptop (large)
+-------------------------------------------------- */
+@media (min-width: 1024px) {
+    
+
+    .main-header {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 20px;
     }
+
+        .main-header img {
+            min-height: 150px;
+        }
+
+        .main-header h1 {
+            font-size: 4em !important;
+            padding-top: 30px;
+        }
+
+    .flex-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+        
+}
