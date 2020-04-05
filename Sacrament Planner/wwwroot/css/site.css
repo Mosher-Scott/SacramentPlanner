@@ -11,13 +11,42 @@ a.navbar-brand {
     word-break: break-all;
 }
 
+.blueBackground {
+    background: #3dadad;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn-primary, btn-danger{
+    color: white !important;
+}
+
+.btn-danger {
+    color: white !important;
+}
+
+
+.blueBorder {
+    border: 2px solid #3dadad;
+    padding: 10px;
+    width: 100%;
+}
+
+label {
+    font-family: latin-ext;
+    font-weight: bold;
+}
+
+.blueLine {
+    background-color: #3dadad; 
+    height: 2px;
+}
 
 /* mobile (main)
 -------------------------------------------------- */
 html {
     font-size: 14px;
     background-color: #e8e4ca;
-    
 }
 
 .border-top {
