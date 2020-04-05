@@ -11,7 +11,7 @@
 <div>
     <h4>Sacrament Meeting Program for @Html.DisplayFor(model => model.MeetingDate)</h4>
     <hr />
-    <div id="leadership">
+    <div class="blueBackground">
         <h4>Leadership</h4>
         <dl class="row">
             <dt class="col-sm-2">
@@ -27,9 +27,8 @@
                 @Html.DisplayFor(model => model.Conducting)
             </dd>
         </dl>
-        <hr />
     </div>
-    <div id="prayers">
+    <div class="blueBorder">
         <h4>Prayers</h4>
         <dl class="row">
             <dt class="col-sm-2">
@@ -46,10 +45,9 @@
                 @Html.DisplayFor(model => model.ClosingPrayer)
             </dd>
         </dl>
-        <hr />
     </div>
 
-    <div id="music">
+    <div class="blueBackground">
         <h4>Music</h4>
         <dl class="row">
             <dt class="col-sm-2">
@@ -92,10 +90,9 @@
                 @Html.DisplayFor(model => model.ClosingHymn)
             </dd>
         </dl>
-        <hr />
     </div>
 
-    <div id="speakers">
+    <div class="blueBorder">
         <h4>Speakers</h4>
         <dl class="row">
             @if (Model.Speaker1 != null)
@@ -209,11 +206,11 @@
                 </dd>
             }
         </dl>
-        <hr />
     </div>
 </div>
+<br />
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a> |
-    <a asp-action="Print" asp-route-id="@Model.ID" target="_blank">Print Program</a>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-primary">Back to List</a> |
+    <a asp-action="Print" asp-route-id="@Model.ID" target="_blank" class="btn btn-primary">Print Program</a>
 </div>

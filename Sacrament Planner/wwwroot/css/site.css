@@ -17,8 +17,13 @@ a.navbar-brand {
     width: 100%;
 }
 
-.btn-primary, btn-danger{
+.btn-primary, btn-danger {
     color: white !important;
+    
+}
+
+.btn-primary {
+    background-color: #3dadad !important;
 }
 
 .btn-danger {
