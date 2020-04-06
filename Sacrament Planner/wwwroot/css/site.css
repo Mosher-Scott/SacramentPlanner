@@ -198,10 +198,10 @@ body {
     div.item img {
         width: 100%;
         flex: 2;
+        padding-right: 10px;
     }
 
     .item {
-        padding: 10px;
         flex: 1;
     }
 }
@@ -229,6 +229,10 @@ body {
     .flex-container {
         padding-left: 50px;
         padding-right: 50px;
+    }
+
+    .item {
+        padding: 10px;
     }
         
 }

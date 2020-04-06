@@ -18,15 +18,15 @@ namespace Sacrament_Planner.Data
 
             var members = new Members[]
             {
-            new Members{FirstName="Joseph",LastName="Smith",Age=38,IsMale=true,Calling="Bishop"},
-            new Members{FirstName="Emma",LastName="Smith",Age=30,IsMale=false,Calling="RS President"},
-            new Members{FirstName="Sidney",LastName="Rigdon",Age=40,IsMale=true,Calling="1st Counselor"},
-            new Members{FirstName="Frederick",LastName="Williams",Age=37,IsMale=true,Calling="2nd Counselor"},
-            new Members{FirstName="Jane",LastName="Manning",Age=94,IsMale=false,Calling="Primary Teacher"},
-            new Members{FirstName="David",LastName="Archuleta",Age=29,IsMale=true,Calling="Sunday School Teacher"},
-            new Members{FirstName="Brandon",LastName="Flowers",Age=38,IsMale=true,Calling="Choir Director"},
-            new Members{FirstName="Jack",LastName="Hill",Age=12,IsMale=true},
-            new Members{FirstName="Jill",LastName="Hill",Age=13,IsMale=false}
+            new Members{FirstName="Joseph",LastName="Smith",Age=38,Gender="Male",Calling="Bishop"},
+            new Members{FirstName="Emma",LastName="Smith",Age=30,Gender="Female",Calling="RS President"},
+            new Members{FirstName="Sidney",LastName="Rigdon",Age=40,Gender="Male",Calling="1st Counselor"},
+            new Members{FirstName="Frederick",LastName="Williams",Age=37,Gender="Male",Calling="2nd Counselor"},
+            new Members{FirstName="Jane",LastName="Manning",Age=94,Gender="Female",Calling="Primary Teacher"},
+            new Members{FirstName="David",LastName="Archuleta",Age=29,Gender="Male",Calling="Sunday School Teacher"},
+            new Members{FirstName="Brandon",LastName="Flowers",Age=38,Gender="Male",Calling="Choir Director"},
+            new Members{FirstName="Jack",LastName="Hill",Age=12,Gender="Male"},
+            new Members{FirstName="Jill",LastName="Hill",Age=13,Gender="Female"}
 
             };
             foreach (Members m in members)
