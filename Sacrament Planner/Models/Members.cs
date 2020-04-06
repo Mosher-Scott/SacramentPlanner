@@ -30,6 +30,9 @@ namespace Sacrament_Planner.Models
         [Required]
         public bool IsMale { get; set; }
 
+        [Required]
+        public string Gender { get; set; }
+
         [RegularExpression(@"^[0-9a-zA-Z \-\']+$", ErrorMessage = "Calling cannot include special characters")]
         public string Calling { get; set; }
 
@@ -48,7 +51,7 @@ namespace Sacrament_Planner.Models
         {
             get
             {
-                if(IsMale)
+                if(Gender == "Male")
                 {
                     return $"Brother {FirstName} {LastName}";
                 } else

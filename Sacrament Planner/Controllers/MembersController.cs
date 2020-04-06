@@ -54,7 +54,7 @@ namespace Sacrament_Planner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,FirstName,LastName,Age,IsMale,Calling")] Members members)
+        public async Task<IActionResult> Create([Bind("ID,FirstName,LastName,Age, Gender, Calling")] Members members)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Sacrament_Planner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,FirstName,LastName,Age,IsMale,Calling")] Members members)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,FirstName,LastName,Age,Gender,Calling")] Members members)
         {
             if (id != members.ID)
             {
