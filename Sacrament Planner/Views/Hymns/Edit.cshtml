@@ -5,11 +5,10 @@
 }
     <div class="main-header">
         <img src="~/images/hymns.jpg" alt="hymn book" />
-        <h1 class="move-left">Hymns</h1>
+        <h1 class="move-left">@Meetings.WardTitle Hymns</h1>
     </div>
-<h1>Edit</h1>
+<h1>Edit Hymn</h1>
 
-<h4>Hymns</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -34,7 +33,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-danger">Cancel</a>
 </div>
 
 @section Scripts {

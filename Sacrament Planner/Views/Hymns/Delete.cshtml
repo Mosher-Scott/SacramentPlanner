@@ -5,13 +5,12 @@
 }
     <div class="main-header">
         <img src="~/images/hymns.jpg" alt="hymn book" />
-        <h1 class="move-left">Hymns</h1>
+        <h1 class="move-left">@Meetings.WardTitle Hymns</h1>
     </div>
-<h1>Delete</h1>
+<h1>Delete Hymn</h1>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Hymns</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -31,6 +30,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="ID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
     </form>
 </div>
