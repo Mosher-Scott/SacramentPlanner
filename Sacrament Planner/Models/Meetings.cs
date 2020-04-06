@@ -13,8 +13,9 @@ namespace Sacrament_Planner.Models
 
         [DataType(DataType.Date)]
        // [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [DisplayFormat(DataFormatString = "{0:MMMM dd, yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MMMM dd, yyyy}")]
         [Display(Name = "Meeting Date")]
+        [Required]
         public DateTime MeetingDate { get; set; }
 
         [Required]
@@ -22,14 +23,14 @@ namespace Sacrament_Planner.Models
 
         // In the future, if we want to save the IDs and use multiple tables
         //public int PresidingId { get; set; }
-
+        [Required]
         public string Conducting { get; set; }
 
-        // In our logic, if IntermediateSong == 0, then there is none
         [Display(Name = "Intermediate Song")]
         public string IntermediateSong { get; set; }
 
         [Display(Name = "Intermediate Song Number")]
+        [Range(0, 341)]
         public int IntermediateSongNumber { get; set; }
 
         // If this is null, then there is no intermediate musical number
@@ -79,27 +80,38 @@ namespace Sacrament_Planner.Models
         public string Speaker7Topic { get; set; }
 
         [Display(Name = "Opening Hymn")]
+        [Required]
         public string OpeningHymn { get; set; }
 
         [Display(Name = "Opening Hymn Number")]
+        [Range(0, 341)]
+        [Required]
         public int OpeningHymnNumber { get; set; }
 
         [Display(Name = "Sacrament Hymn")]
+        [Required]
         public string SacramentHymn { get; set; }
 
         [Display(Name = "Sacrament Hymn Number")]
+        [Required]
+        [Range(0, 341)]
         public int SacramentHymnNumber { get; set; }
 
         [Display(Name = "Closing Hymn")]
+        [Required]
         public string ClosingHymn { get; set; }
 
         [Display(Name = "Closing Hymn Number")]
+        [Required]
+        [Range(0, 341)]
         public int ClosingHymnNumber { get; set; }
 
         [Display(Name = "Opening Prayer")]
+        [Required]
         public string OpeningPrayer { get; set; }
 
         [Display(Name = "Closing Prayer")]
+        [Required]
         public string ClosingPrayer { get; set; }
 
     }
