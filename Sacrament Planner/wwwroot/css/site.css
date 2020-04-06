@@ -11,6 +11,10 @@ a.navbar-brand {
     word-break: break-all;
 }
 
+.blueBackground span.text-danger.field-validation-error {
+    color: darkred !important;
+}
+
 .blueBackground {
     background: #3dadad;
     padding: 10px;
