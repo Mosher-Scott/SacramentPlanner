@@ -1,0 +1,375 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
+a {
+    color: #008080 !important;
+}
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.blueBackground span.text-danger.field-validation-error {
+    color: darkred !important;
+}
+
+.blueBackground {
+    background: #3dadad;
+    padding: 10px;
+    width: 100%;
+}
+
+
+.btn-primary, btn-danger {
+    color: white !important;
+    
+}
+
+.btn-primary {
+    background-color: #3dadad !important;
+}
+
+.btn-danger {
+    color: white !important;
+}
+
+
+.blueBorder {
+    border: 2px solid #3dadad;
+    padding: 10px;
+    width: 100%;
+}
+
+label {
+    font-family: latin-ext;
+    font-weight: bold;
+}
+
+.blueLine {
+    background-color: #3dadad; 
+    height: 2px;
+}
+
+
+html {
+    font-size: 16px;
+    background-color: #e8e4ca;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 5px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.bg-white {
+    background-color: #3dadad !important;
+    border-bottom: 10px solid #b58978;
+}
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    text-align: center;
+}
+
+
+
+a.nav-link.text-dark {
+    color: #fff !important;
+}
+
+    a.nav-link.text-dark:hover {
+        color: #F0FFFF !important;
+    }
+
+a.navbar-brand {
+    color: #fff !important;
+}
+
+    a.navbar-brand:hover {
+        color: #F0FFFF !important;
+    }
+
+.logo {
+    width: 50px;
+}
+
+.move-left {
+    padding-right: 65px;
+}
+/* laptop (large/main)
+-------------------------------------------------- */
+.main-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+    .main-header img {
+        max-height: 150px;
+    }
+
+    .main-header h1 {
+        font-size: 4em !important;
+        background-color: #b58978;
+        padding-top: 30px;
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        padding-left: 50px;
+        padding-right: 50px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+div.item.home-pic {
+    max-width: 430px;
+    width: 80%;
+    padding-bottom: 15px;
+}
+
+div.item img {
+    width: 100%;
+    flex: 2;
+    padding-right: 10px;
+}
+
+        .item {
+            flex: 1;
+            padding: 10px;
+        }
+
+
+/* Tablet (medium)
+-------------------------------------------------- */
+@media (max-width: 1024px) {
+    html{
+        font-size: 14px;
+    }
+
+    .main-header {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 20px;
+    }
+
+        .main-header img {
+            max-height: 130px;
+        }
+
+        .main-header h1 {
+            font-size: 3em !important;
+            padding-top: 35px;
+        }
+
+    .flex-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .item {
+        padding: 10px;
+    }
+        
+}
+
+@media (max-width: 768px) {
+
+    .btn-primary {
+        background-color: #3dadad !important;
+        padding: 1px 5px 1px 5px;
+        margin-bottom: 3px;
+        margin-top: 3px;
+    }
+
+    .main-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+    .main-header img {
+        max-height: 100px;
+        min-height: 80px;
+    }
+
+    .main-header h1 {
+        font-size: 2em !important;
+        background-color: #b58978;
+        padding-top: 30px;
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    .move-left {
+        padding-right: 30px;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    div.item.home-pic {
+        width: 80%;
+        padding-bottom: 15px;
+    }
+
+        div.item img {
+            width: 100%;
+            flex: 2;
+        }
+
+    .item {
+        flex: 1;
+        padding: 0px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    .table td, .table th {
+        padding: 0px 0rem 0px 9rem;
+        border-top: 1px solid #dee2e6;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+
+    tr {
+        border-top: 2px solid #3dadad;
+        border-left: 2px solid #3dadad;
+        border-right: 2px solid #3dadad;
+    }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+    }
+
+        td:before {
+            position: absolute;
+            top: 0px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            
+        }
+
+        td:before {
+            font-weight: 700;
+        }
+
+    .membersTd:nth-of-type(1):before {
+        content: "First Name: ";
+    }
+
+    .membersTd:nth-of-type(2):before {
+        content: "Last Name: ";
+    }
+
+    .membersTd:nth-of-type(3):before {
+        content: "Age: ";
+    }
+
+    .membersTd:nth-of-type(4):before {
+        content: "Gender: ";
+    }
+
+    .membersTd:nth-of-type(5):before {
+        content: "Calling: ";
+    }
+
+    .membersTd:nth-of-type(6):before {
+        content: "Quote Options: ";
+    }
+
+
+    .hymnsTd:nth-of-type(1):before {
+        content: "Hymn Name: ";
+    }
+
+    .hymnsTd:nth-of-type(2):before {
+        content: "Page Number: ";
+    }
+
+    .hymnsTd:nth-of-type(3):before {
+        content: "Quote Options: ";
+    }
+
+
+    .meetingsTd:nth-of-type(1):before {
+        content: "Meeting Date: ";
+    }
+
+    .meetingsTd:nth-of-type(2):before {
+        content: "Presiding: ";
+    }
+
+    .meetingsTd:nth-of-type(3):before {
+        content: "Conducting: ";
+    }
+
+    .meetingsTd:nth-of-type(4):before {
+        content: "Opening Prayer: ";
+    }
+
+    .meetingsTd:nth-of-type(5):before {
+        content: "Closing Prayer: ";
+    }
+
+    .meetingsTd:nth-of-type(6):before {
+        content: "Quote Options: ";
+    }
+}
+

@@ -27,13 +27,13 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td class="hymnsTd">
                 @Html.DisplayFor(modelItem => item.HymnName)
             </td>
-            <td>
+            <td class="hymnsTd">
                 @Html.DisplayFor(modelItem => item.PageNumber)
             </td>
-            <td>
+            <td class="hymnsTd">
                 <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-primary">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-primary">Delete</a>

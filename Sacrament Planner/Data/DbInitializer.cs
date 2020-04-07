@@ -25,8 +25,8 @@ namespace Sacrament_Planner.Data
             new Members{FirstName="Jane",LastName="Manning",Age=94,Gender="Female",Calling="Primary Teacher"},
             new Members{FirstName="David",LastName="Archuleta",Age=29,Gender="Male",Calling="Sunday School Teacher"},
             new Members{FirstName="Brandon",LastName="Flowers",Age=38,Gender="Male",Calling="Choir Director"},
-            new Members{FirstName="Jack",LastName="Hill",Age=12,Gender="Male"},
-            new Members{FirstName="Jill",LastName="Hill",Age=13,Gender="Female"}
+            new Members{FirstName="Jack",LastName="Hill",Age=12,Gender="Male",Calling="None"},
+            new Members{FirstName="Jill",LastName="Hill",Age=13,Gender="Female",Calling="None"}
 
             };
             foreach (Members m in members)
