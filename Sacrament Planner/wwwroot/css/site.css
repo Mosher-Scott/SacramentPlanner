@@ -21,6 +21,7 @@ a.navbar-brand {
     width: 100%;
 }
 
+
 .btn-primary, btn-danger {
     color: white !important;
     
@@ -179,6 +180,7 @@ body {
         font-size: 16px;
     }
 
+    
     .main-header h1 {
         font-size: 3em !important;
         padding-top: 20px;
@@ -236,3 +238,4 @@ body {
     }
         
 }
+
