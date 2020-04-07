@@ -11,11 +11,12 @@ namespace Sacrament_Planner.Models
         public int ID { get; set; }
 
         [Display(Name = "Hymn Name")]
-        [RegularExpression(@"^[0-9a-zA-Z \-\']+$", ErrorMessage = "Hymn Name cannot include special characters")]
+        [RegularExpression(@"^[0-9a-zA-Z \-\'!?]+$", ErrorMessage = "Hymn Name cannot include special characters")]
         [Required]
         public string HymnName { get; set; }
 
         [Display(Name = "Page Number")]
+        [Range(0, 341)]
         [Required]
         public int PageNumber { get; set; }
 
